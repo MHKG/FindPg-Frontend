@@ -1,0 +1,208 @@
+.ownerDetails {
+	box-sizing: border-box;
+	width: auto;
+	height: 100%;
+	background: #ffffff;
+	border: 1.5px solid #ebedf0;
+	border-radius: 20px;
+	padding: 32px;
+}
+
+.userImage {
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
+}
+
+.ownerDetail {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 183px;
+	height: 52px;
+}
+
+.designation {
+	width: 120px;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.userName {
+	width: 183px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.userAddress {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 143px;
+	height: auto;
+	border-left: 4px solid rgba(39, 101, 221, 0.3);
+}
+
+.titleDetails {
+	width: 105px;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin-top: 4px;
+	margin-left: 7px;
+}
+
+.address {
+	width: 250px;
+	height: auto;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 16px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	flex-wrap: wrap;
+	margin-bottom: 4px;
+	margin-left: 7px;
+}
+
+.visitUserBtn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 212px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+
+}
+
+.visitUserBtn:hover {
+	background-color: #2765dd;
+}
+
+.visitUserBtnDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 8px;
+	width: 135px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.calendar {
+	width: 24px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.scheduleUserVisitText {
+	width: 103px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #ffffff;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.contactUserBtn {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 152px;
+	height: 48px;
+	border: 1px solid #2765dd;
+	border-radius: 8px;
+	background-color: #ffffff;
+}
+
+.contactUserBtn:hover {
+	background-color: transparent;
+}
+
+.contactUserBtnDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 8px;
+	width: 90px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.phone {
+	width: 24px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.contactUserText {
+	width: 58px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #2765dd;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}

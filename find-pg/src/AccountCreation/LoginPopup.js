@@ -62,7 +62,7 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 		try {
 			await loginUser(emailProp, passwordProp, googleLogin);
 		} catch (error) {
-			console.error("Error during OTP verification:", error);
+			console.error("Error during login:", error);
 			setErrorMessage("Failed to sign in. Please try again.");
 		}
 	};

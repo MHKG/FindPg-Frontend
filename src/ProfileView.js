@@ -39,7 +39,9 @@ export default function ProfileView() {
 			const data = response.data;
 			setUserData(data);
 			setImageSrc(
-				"http://localhost:8080/user_controller/" + data.imageURL
+				data.imageURL.includes("googleuser")
+					? data.imageURL
+					: "http://localhost:8080/user_controller/" + data.imageURL
 			);
 			setName(data.name);
 			setEmail(data.email);

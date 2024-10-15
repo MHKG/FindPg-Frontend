@@ -10,8 +10,6 @@
 
 .pg {
 	box-sizing: border-box;
-	width: 832px;
-	height: 236px;
 	background: #ffffff;
 	border: 1.5px solid #ebedf0;
 	border-radius: 12px;
@@ -20,8 +18,12 @@
 
 .pgImages {
 	width: 300px;
-	height: 236px;
+	height: 320px;
 	border-radius: 12px;
+}
+
+.imageContainer {
+	height: 320px;
 }
 
 .imageArrows {
@@ -173,6 +175,7 @@
 	width: auto;
 	height: auto;
 	margin-top: 8px;
+	margin-bottom: 8px;
 	border-right: 1.5px solid #ebedf0;
 	padding-right: 20px;
 	padding-left: 12px;

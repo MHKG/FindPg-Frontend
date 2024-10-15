@@ -319,7 +319,7 @@ export default function FetchPgDetails({
 								<div className="d-flex flex-column">
 									<div
 										className="d-flex flex-row"
-										style={{ gap: 247 }}
+										style={{ gap: 248 }}
 									>
 										<div className="nameAndLocation">
 											<h2 className="namePgDetails">

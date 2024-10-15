@@ -20,7 +20,7 @@ export default function Filters({
 				max: Math.max(budget[0].min, budget[0].max),
 			},
 		]);
-	}, [budget[0].min, budget[0].max]);
+	}, [budget]);
 
 	const handlePgTypeChange = (type) => {
 		if (pgType === type) {

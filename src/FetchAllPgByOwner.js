@@ -2,9 +2,7 @@ import "./Styles/FetchPgDetails.css";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import Arrowhead from "./images/Arrowhead.png";
-import Calendar from "./images/Calendar.png";
-import Phone from "./images/Phone.png";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { axiosInstance } from "./AxiosInstance";
 import Header from "./Header";
 import Navigators from "./Navigators";
@@ -16,7 +14,6 @@ export default function FetchAllPgByOwner() {
 	const [visibleRange, setVisibleRange] = useState({ start: 0, end: 5 });
 	const [order, setOrder] = useState({ start: 0, end: 5 });
 
-	const navigate = useNavigate();
 	const { location } = useParams();
 
 	useEffect(() => {

@@ -34,5 +34,8 @@ export const validate = (field, value, messageSetter, password) => {
 				messageSetter("");
 				return true;
 			}
+
+		default:
+			return false;
 	}
 };

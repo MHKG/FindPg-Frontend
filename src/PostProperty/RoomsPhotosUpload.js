@@ -15,7 +15,6 @@ export default function RoomsPhotosUpload() {
 	const navigate = useNavigate();
 
 	const roomType = JSON.parse(sessionStorage.getItem("roomSharingType"));
-	const lengthOfRoomType = roomType.length;
 
 	const roomDetails = JSON.parse(sessionStorage.getItem("roomDetails"));
 
@@ -176,7 +175,10 @@ export default function RoomsPhotosUpload() {
 								<div className="image-grid">
 									{images[idx] &&
 										images[idx].map((imageSrc, index) => (
-											<div className="image-wrapper" key={index}>
+											<div
+												className="image-wrapper"
+												key={index}
+											>
 												<img
 													src={imageSrc}
 													alt={`Upload Image ${

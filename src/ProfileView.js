@@ -86,7 +86,7 @@ export default function ProfileView() {
 
 		try {
 			if (selectedFile) {
-				const imageResponse = await axiosInstance.post(
+				await axiosInstance.post(
 					"/user_controller/uploadImage",
 					formData,
 					{
@@ -99,7 +99,7 @@ export default function ProfileView() {
 				);
 			}
 
-			const response = await axiosInstance.post(
+			await axiosInstance.post(
 				"/user_controller/updateUserDetails",
 				updatedUserData,
 				{
@@ -140,7 +140,7 @@ export default function ProfileView() {
 						>
 							<img
 								src={imageSrc}
-								alt="Profile Image"
+								alt="Profile"
 								className="profile_image"
 								onClick={
 									mode === "Edit"

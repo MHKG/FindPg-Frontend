@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button, Col, Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "../Styles/FoodMenuDetails.css";
 import Header from "../Header";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +43,7 @@ export default function FoodMenuDetails() {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const foodResponse = await axiosInstance.post(
+		await axiosInstance.post(
 			"/food_menu_controller/add",
 			new URLSearchParams({
 				food: JSON.stringify(food),
@@ -93,20 +93,6 @@ export default function FoodMenuDetails() {
 			return "100vh";
 		} else {
 			return `${isChecked.length * 150 + 700}px`;
-		}
-	};
-
-	const getTopForMenuLabels = (day) => {
-		let index = isChecked.indexOf(day);
-		if (index > -1) {
-			return `${index * 150 + 300}px`;
-		}
-	};
-
-	const getTopForMenuInputs = (day) => {
-		let index = isChecked.indexOf(day);
-		if (index > -1) {
-			return `${index * 150 + 350}px`;
 		}
 	};
 

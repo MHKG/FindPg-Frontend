@@ -68,6 +68,8 @@ export default function FoodMenu({ foodAvailable }) {
 										<td>{menu.dinner}</td>
 									</tr>
 								);
+							} else {
+								return null;
 							}
 						})}
 					</tbody>

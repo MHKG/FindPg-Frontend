@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Styles/RegisterPopup.css";
-import FlagIcon from "react-world-flags";
 import CreateAccount from "./CreateAccount";
 import { axiosInstance } from "../AxiosInstance";
 import { validate } from "../GlobalFunctions";
@@ -11,7 +10,6 @@ import { auth } from "../Firebase";
 import SignInwithGoogle from "./SignInwithGoogle";
 
 function RegisterPopup({ show, onHide, onContinue }) {
-	const [country, setCountry] = useState("IN");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [verifyPassword, setVerifyPassword] = useState("");

@@ -60,7 +60,7 @@ export default function CreateAccount({ show, onHide, params }) {
 
 		try {
 			if (!imageSrc.includes("googleuser")) {
-				const imageResponse = await axiosInstance.post(
+				await axiosInstance.post(
 					"/user_controller/uploadImage",
 					formData,
 					{

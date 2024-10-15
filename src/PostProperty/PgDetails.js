@@ -103,7 +103,7 @@ export default function PgDetails() {
 
 		const updatedAmenities = { ...amenities, selectedCleaning };
 
-		const updatePg = await axiosInstance.post(
+		await axiosInstance.post(
 			"/pg_controller/updatePgTypeAndDesc",
 			new URLSearchParams({
 				pg_id: sessionStorage.getItem("pg_id"),
@@ -117,7 +117,7 @@ export default function PgDetails() {
 			}
 		);
 
-		const rulesResponse = await axiosInstance.post(
+		await axiosInstance.post(
 			"/pg_rules_controller/add",
 			{
 				pg_id: sessionStorage.getItem("pg_id"),
@@ -131,7 +131,7 @@ export default function PgDetails() {
 			}
 		);
 
-		const amenitiesResponse = await axiosInstance.post(
+		await axiosInstance.post(
 			"/amenities_controller/add",
 			{
 				pg_id: sessionStorage.getItem("pg_id"),

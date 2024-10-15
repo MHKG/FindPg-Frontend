@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Header from "../Header";
-import SearchBar from "../SearchBar";
 import "react-input-range/lib/css/index.css";
 import "../Styles/ListOfPg.css";
 import Filters from "./Filters";

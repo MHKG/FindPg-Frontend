@@ -83,7 +83,7 @@ export default function Pricing() {
 		if (!validateFields()) return;
 
 		try {
-			const updatePg = await axiosInstance.post(
+			await axiosInstance.post(
 				"/pg_controller/updatePgPrices",
 				new URLSearchParams({
 					pg_id: sessionStorage.getItem("pg_id"),

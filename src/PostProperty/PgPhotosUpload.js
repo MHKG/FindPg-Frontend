@@ -52,7 +52,7 @@ export default function PgPhotosUpload() {
 	const handleRemoveImage = async (index) => {
 		const newImages = [...images];
 		const filePath = newImages[index].split("/")[4];
-		const response = await axiosInstance.post(
+		await axiosInstance.post(
 			"/image_controller/remove_image",
 			new URLSearchParams({ filePath: filePath }),
 			{
@@ -62,8 +62,6 @@ export default function PgPhotosUpload() {
 			}
 		);
 
-		const pgImageUrl = sessionStorage.getItem("pgImageUrl");
-		// pgImageUrl.
 		newImages[index] = uploadImageRect;
 		setImages(newImages);
 

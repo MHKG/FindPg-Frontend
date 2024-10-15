@@ -10,7 +10,11 @@ export default function SignInwithGoogle({ onClick }) {
 				}}
 				onClick={onClick}
 			>
-				<img src={require("../images/google.png")} width={"60%"} />
+				<img
+					alt="Google"
+					src={require("../images/google.png")}
+					width={"60%"}
+				/>
 			</div>
 		</div>
 	);

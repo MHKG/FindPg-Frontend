@@ -8,6 +8,10 @@ import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "./AxiosInstance";
 import LoginPopup from "./AccountCreation/LoginPopup";
 
+const CACHE_KEY = "profileImageURL";
+const CACHE_EXPIRY_KEY = "profileImageExpiry";
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
 export default function LoginSidebar({ show, onHide }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [loginIconSrc, setLoginIconSrc] = useState(LoginIcon);
@@ -45,22 +49,40 @@ export default function LoginSidebar({ show, onHide }) {
 		}
 	}, []);
 
+	// Helper function to check if cached image is expired
+	const isCacheExpired = () => {
+		const expiry = localStorage.getItem(CACHE_EXPIRY_KEY);
+		return !expiry || new Date().getTime() > expiry;
+	};
+
 	useEffect(() => {
 		const fetchProfileImage = async () => {
 			try {
-				setLoginIconSrc(
-					userData.imageURL.includes("googleuser")
+				// Check localStorage cache
+				if (localStorage.getItem(CACHE_KEY) && !isCacheExpired()) {
+					// Use the cached image
+					setLoginIconSrc(localStorage.getItem(CACHE_KEY));
+				} else {
+					// Fetch image URL
+					let imageURL = userData.imageURL.includes("googleuser")
 						? userData.imageURL
-						: "http://localhost:8080/user_controller/" +
-								userData.imageURL
-				);
+						: `http://localhost:8080/user_controller/${userData.imageURL}`;
+
+					// Set the fetched image URL in the component and cache it
+					setLoginIconSrc(imageURL);
+					localStorage.setItem(CACHE_KEY, imageURL);
+
+					// Set expiry time for the cache
+					const expiryTime = new Date().getTime() + CACHE_DURATION;
+					localStorage.setItem(CACHE_EXPIRY_KEY, expiryTime);
+				}
 			} catch (error) {
 				console.error("Error fetching profile image:", error);
-				return;
+				setLoginIconSrc(LoginIcon); // Fallback to default image
 			}
 		};
 
-		if (isLoggedIn) {
+		if (isLoggedIn && userData.imageURL) {
 			fetchProfileImage();
 		} else {
 			setLoginIconSrc(LoginIcon);

@@ -100,7 +100,7 @@ export default function Navigators() {
 							/>
 						</svg>
 						<a
-							href="#"
+							href="javascript:void(0);"
 							style={{
 								color: "#6B788E",
 							}}

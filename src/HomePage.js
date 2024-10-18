@@ -3,7 +3,7 @@ import "./Styles/HomePage.css";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
 
-function HomePage() {
+export default function HomePage() {
 	return (
 		<div className="homePage">
 			<div className="container" style={{ maxWidth: 1376 }}>
@@ -26,5 +26,3 @@ function HomePage() {
 		</div>
 	);
 }
-
-export default HomePage;

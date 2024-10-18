@@ -9,7 +9,7 @@ import LoginPopup from "./AccountCreation/LoginPopup";
 import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-function Header({ params }) {
+export default function Header({ params }) {
 	const [sidebar, setSidebar] = useState(false);
 	const [registerPopup, setRegisterPopup] = useState(false);
 	const [loginPopup, setLoginPopup] = useState(false);
@@ -77,5 +77,3 @@ function Header({ params }) {
 		</div>
 	);
 }
-
-export default Header;

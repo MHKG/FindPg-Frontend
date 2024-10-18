@@ -17,7 +17,7 @@ import "./Styles/App.css";
 import ResetPassword from "./AccountCreation/ResetPassword";
 import FetchAllPgByOwner from "./FetchAllPgByOwner";
 
-function App() {
+export default function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -40,5 +40,3 @@ function App() {
 		</BrowserRouter>
 	);
 }
-
-export default App;

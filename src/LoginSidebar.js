@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { axiosInstance } from "./AxiosInstance";
 import LoginPopup from "./AccountCreation/LoginPopup";
 
-function LoginSidebar({ show, onHide }) {
+export default function LoginSidebar({ show, onHide }) {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [loginIconSrc, setLoginIconSrc] = useState(LoginIcon);
 	const [userData, setUserData] = useState([]);
@@ -222,5 +222,3 @@ function LoginSidebar({ show, onHide }) {
 		</>
 	);
 }
-
-export default LoginSidebar;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function ThankYou() {
+export default function ThankYou() {
 	const navigate = useNavigate();
 	const [count, setCount] = useState(5);
 
@@ -35,5 +35,3 @@ function ThankYou() {
 		</div>
 	);
 }
-
-export default ThankYou;

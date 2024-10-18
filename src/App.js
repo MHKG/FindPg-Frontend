@@ -27,12 +27,18 @@ export default function App() {
 				<Route path="/PgDetails" element={<PgDetails />} />
 				<Route path="/Pricing" element={<Pricing />} />
 				<Route path="/PgPhotosUpload" element={<PgPhotosUpload />} />
-				<Route path="/RoomsPhotosUpload" element={<RoomsPhotosUpload />} />
+				<Route
+					path="/RoomsPhotosUpload"
+					element={<RoomsPhotosUpload />}
+				/>
 				<Route path="/FoodMenuDetails" element={<FoodMenuDetails />} />
 				<Route path="/ContactDetails" element={<ContactDetails />} />
 				<Route path="/PgAllInfo" element={<PgAllInfo />} />
 				<Route path="/ProfileView" element={<ProfileView />} />
-				<Route path="/FetchAllPgByOwner" element={<FetchAllPgByOwner />} />
+				<Route
+					path="/FetchAllPgByOwner"
+					element={<FetchAllPgByOwner />}
+				/>
 				<Route path="/ThankYou" element={<ThankYou />} />
 				<Route path="*" element={<PageNotFound />} />
 				<Route path="/resetPassword" element={<ResetPassword />} />

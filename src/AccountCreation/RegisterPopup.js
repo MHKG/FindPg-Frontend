@@ -42,7 +42,7 @@ function RegisterPopup({ show, onHide, onContinue }) {
 		};
 	}, [show]);
 
-	const handleContinue = async (emailProp, passwordProp) => {
+	const handleContinue = async (emailProp, passwordProp, imageURL) => {
 		if (emailProp) {
 			setEmail(emailProp);
 			setPassword(passwordProp);
@@ -70,7 +70,8 @@ function RegisterPopup({ show, onHide, onContinue }) {
 			"/auth/signup",
 			new URLSearchParams({
 				email: emailProp ? emailProp : email,
-				password: emailProp ? emailProp : password,
+				password: passwordProp ? passwordProp : password,
+				imageURL: imageURL,
 			})
 		);
 
@@ -136,7 +137,7 @@ function RegisterPopup({ show, onHide, onContinue }) {
 
 			setUserDetails(user);
 			setEmail(user.email);
-			handleContinue(user.email, "");
+			handleContinue(user.email, "", user.photoURL);
 			onHide();
 		} catch (error) {
 			console.error("Google sign-in error:", error);
@@ -327,7 +328,7 @@ function RegisterPopup({ show, onHide, onContinue }) {
 					</div>
 					<Button
 						variant="primary"
-						onClick={() => handleContinue("", "")}
+						onClick={() => handleContinue("", "", "")}
 						className="continueRegister"
 						id="continueLogin"
 					>

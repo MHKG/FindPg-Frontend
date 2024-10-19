@@ -51,17 +51,17 @@ export default function LoginSidebar({ show, onHide }) {
 
 	// Helper function to check if cached image is expired
 	const isCacheExpired = () => {
-		const expiry = localStorage.getItem(CACHE_EXPIRY_KEY);
+		const expiry = sessionStorage.getItem(CACHE_EXPIRY_KEY);
 		return !expiry || new Date().getTime() > expiry;
 	};
 
 	useEffect(() => {
 		const fetchProfileImage = async () => {
 			try {
-				// Check localStorage cache
-				if (localStorage.getItem(CACHE_KEY) && !isCacheExpired()) {
+				// Check sessionStorage cache
+				if (sessionStorage.getItem(CACHE_KEY) && !isCacheExpired()) {
 					// Use the cached image
-					setLoginIconSrc(localStorage.getItem(CACHE_KEY));
+					setLoginIconSrc(sessionStorage.getItem(CACHE_KEY));
 				} else {
 					// Fetch image URL
 					let imageURL = userData.imageURL.includes("googleuser")
@@ -70,11 +70,11 @@ export default function LoginSidebar({ show, onHide }) {
 
 					// Set the fetched image URL in the component and cache it
 					setLoginIconSrc(imageURL);
-					localStorage.setItem(CACHE_KEY, imageURL);
+					sessionStorage.setItem(CACHE_KEY, imageURL);
 
 					// Set expiry time for the cache
 					const expiryTime = new Date().getTime() + CACHE_DURATION;
-					localStorage.setItem(CACHE_EXPIRY_KEY, expiryTime);
+					sessionStorage.setItem(CACHE_EXPIRY_KEY, expiryTime);
 				}
 			} catch (error) {
 				console.error("Error fetching profile image:", error);

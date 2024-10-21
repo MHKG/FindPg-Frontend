@@ -14,12 +14,12 @@ export default function Filters({
 	setAmenities,
 }) {
 	useEffect(() => {
-		setBudget([
-			{
-				min: Math.min(budget[0].min, budget[0].max),
-				max: Math.max(budget[0].min, budget[0].max),
-			},
-		]);
+		const minValue = Math.min(budget[0].min, budget[0].max);
+		const maxValue = Math.max(budget[0].min, budget[0].max);
+
+		if (budget[0].min !== minValue || budget[0].max !== maxValue) {
+			setBudget([{ min: minValue, max: maxValue }]);
+		}
 	}, [budget]);
 
 	const handlePgTypeChange = (type) => {

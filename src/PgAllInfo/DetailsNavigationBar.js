@@ -113,7 +113,7 @@ export default function DetailsNavigationBar({ props }) {
 				>
 					<div className="d-flex flex-column gap-2">
 						<div style={{ marginLeft: 14, marginRight: 13 }}>
-							Similar PG’s
+							Similar PGs
 						</div>
 						<span className="active-indicator"></span>
 					</div>

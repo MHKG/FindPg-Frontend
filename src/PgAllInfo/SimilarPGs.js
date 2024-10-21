@@ -264,323 +264,338 @@ export default function SimilarPGs({ order, setSimilarPgsAvailable }) {
 	return (
 		<section id="section-6" style={{ paddingBottom: 64, paddingTop: 52 }}>
 			<h2 className="rules" style={{ width: 117 }}>
-				Similar PG’s
+				Similar PGs
 			</h2>
-			{allPgDetails.map((pgDetail, index) => {
-				const pg_id = pgDetail.pg_id;
-				const currentIndex = imageIndexes[pg_id] || 0;
-				const amenities = pgDetail.amenities || {};
-				const images = pgDetail.images;
-				const rooms = allRooms[pg_id] || [];
+			{allPgDetails.length !== 0 ? (
+				allPgDetails.map((pgDetail, index) => {
+					const pg_id = pgDetail.pg_id;
+					const currentIndex = imageIndexes[pg_id] || 0;
+					const amenities = pgDetail.amenities || {};
+					const images = pgDetail.images;
+					const rooms = allRooms[pg_id] || [];
 
-				return (
-					<div
-						className="pg"
-						key={pg_id}
-						style={{
-							marginBottom: `${
-								index + 1 === allPgDetails.length ? 0 : 28
-							}px`,
-						}}
-					>
-						<div className="d-flex flex-row">
-							<div className="imageContainer">
-								<img
-									className="pgImages"
-									src={`http://localhost:8080/image_controller/${images[currentIndex]}`}
-									alt={`PG Image ${index}`}
-								/>
-								<div
-									className="d-flex flex-row"
-									style={{
-										gap: 212,
-										position: "relative",
-										top: -181,
-									}}
-								>
-									<Button
-										onClick={() =>
-											handlePrevious(pg_id, index)
-										}
-										className="imageArrows"
-										style={{
-											borderRadius: "0px 32px 32px 0px",
-										}}
-									>
-										<img
-											className="arrow"
-											src={Arrowhead}
-											alt="Image shifter"
-										/>
-									</Button>
-									<Button
-										onClick={() => handleNext(pg_id, index)}
-										className="imageArrows"
-										style={{
-											padding: "6px 4px 6px 8px",
-											borderRadius: "32px 0px 0px 32px",
-										}}
-									>
-										<img
-											className="arrow"
-											src={Arrowhead}
-											style={{
-												right: "5px",
-												transform: "rotate(180deg)",
-											}}
-											alt="Image shifter"
-										/>
-									</Button>
-								</div>
-								<div className="toggle-bar">
-									{images.map((_, idx) => {
-										const imagesCount =
-											allPgDetails.flatMap(
-												(pgDetail) => pgDetail.images
-											).length;
-
-										if (imagesCount <= 5) {
-											return (
-												<span
-													key={idx}
-													className={`dot ${
-														idx === currentIndex
-															? "active"
-															: ""
-													}`}
-													onClick={() =>
-														handleDotClick(
-															pg_id,
-															idx
-														)
-													}
-												/>
-											);
-										}
-
-										const isVisible =
-											(idx >= visibleRange.start &&
-												idx < visibleRange.end) ||
-											idx === currentIndex;
-
-										return (
-											isVisible && (
-												<span
-													key={idx}
-													className={`dot ${
-														idx === currentIndex
-															? "active"
-															: ""
-													}`}
-													onClick={() =>
-														handleDotClick(
-															pg_id,
-															idx
-														)
-													}
-												/>
-											)
-										);
-									})}
-								</div>
-							</div>
-							<div
-								className="data"
-								onClick={() => pgAllInfo(pg_id)}
-							>
-								<div className="d-flex flex-column">
+					return (
+						<div
+							className="pg"
+							key={pg_id}
+							style={{
+								marginBottom: `${
+									index + 1 === allPgDetails.length ? 0 : 28
+								}px`,
+							}}
+						>
+							<div className="d-flex flex-row">
+								<div className="imageContainer">
+									<img
+										className="pgImages"
+										src={`http://localhost:8080/image_controller/${images[currentIndex]}`}
+										alt={`PG Image ${index}`}
+									/>
 									<div
 										className="d-flex flex-row"
-										style={{ gap: 247 }}
-									>
-										<div className="nameAndLocation">
-											<h2 className="namePgDetails">
-												{pgDetail.pg_name}
-											</h2>
-											<p className="locationPgDetails">
-												{pgDetail.location}
-											</p>
-										</div>
-										<div
-											className="type"
-											style={{
-												background: getColorBackground(
-													pgDetail.pg_type
-												),
-											}}
-										>
-											<p
-												className="pgTypeDetails"
-												style={{
-													color: getColorText(
-														pgDetail.pg_type
-													),
-												}}
-											>
-												{pgDetail.pg_type}
-											</p>
-										</div>
-									</div>
-
-									<div
-										className="d-flex flex-row align-items-center"
 										style={{
-											gap: 12,
-											marginTop: 20,
-											paddingBottom: 24,
-											borderBottom: "1.5px solid #ebedf0",
+											gap: 212,
+											position: "relative",
+											top: -181,
 										}}
 									>
-										{rooms.map((room, index) => {
+										<Button
+											onClick={() =>
+												handlePrevious(pg_id, index)
+											}
+											className="imageArrows"
+											style={{
+												borderRadius:
+													"0px 32px 32px 0px",
+											}}
+										>
+											<img
+												className="arrow"
+												src={Arrowhead}
+												alt="Image shifter"
+											/>
+										</Button>
+										<Button
+											onClick={() =>
+												handleNext(pg_id, index)
+											}
+											className="imageArrows"
+											style={{
+												padding: "6px 4px 6px 8px",
+												borderRadius:
+													"32px 0px 0px 32px",
+											}}
+										>
+											<img
+												className="arrow"
+												src={Arrowhead}
+												style={{
+													right: "5px",
+													transform: "rotate(180deg)",
+												}}
+												alt="Image shifter"
+											/>
+										</Button>
+									</div>
+									<div className="toggle-bar">
+										{images.map((_, idx) => {
+											const imagesCount =
+												allPgDetails.flatMap(
+													(pgDetail) =>
+														pgDetail.images
+												).length;
+
+											if (imagesCount <= 5) {
+												return (
+													<span
+														key={idx}
+														className={`dot ${
+															idx === currentIndex
+																? "active"
+																: ""
+														}`}
+														onClick={() =>
+															handleDotClick(
+																pg_id,
+																idx
+															)
+														}
+													/>
+												);
+											}
+
+											const isVisible =
+												(idx >= visibleRange.start &&
+													idx < visibleRange.end) ||
+												idx === currentIndex;
+
 											return (
-												room.room_type !== "Other" && (
-													<div
-														key={index}
-														className="d-flex flex-row align-items-center"
-													>
-														<hr className="roomsLineBreaker" />
-														<div className="roomDetails">
-															<div className="typeAndPrice">
-																<p className="roomType">
-																	{
-																		room.room_type
-																	}
-																</p>
-																<p className="roomPrice">
-																	₹{" "}
-																	{room.cost}
-																</p>
-															</div>
-														</div>
-													</div>
+												isVisible && (
+													<span
+														key={idx}
+														className={`dot ${
+															idx === currentIndex
+																? "active"
+																: ""
+														}`}
+														onClick={() =>
+															handleDotClick(
+																pg_id,
+																idx
+															)
+														}
+													/>
 												)
 											);
 										})}
 									</div>
-
-									<div
-										className="d-flex flex-row align-items-center"
-										style={{
-											borderBottom:
-												"1.5px solid rgb(235, 237, 240)",
-										}}
-									>
+								</div>
+								<div
+									className="data"
+									onClick={() => pgAllInfo(pg_id)}
+								>
+									<div className="d-flex flex-column">
 										<div
-											className="amenitiesPgs"
-											style={{ paddingLeft: 0 }}
+											className="d-flex flex-row"
+											style={{ gap: 247 }}
 										>
-											<h2
-												className="amenitiesTitle"
-												style={{ width: 99 }}
+											<div className="nameAndLocation">
+												<h2 className="namePgDetails">
+													{pgDetail.pg_name}
+												</h2>
+												<p className="locationPgDetails">
+													{pgDetail.location}
+												</p>
+											</div>
+											<div
+												className="type"
+												style={{
+													background:
+														getColorBackground(
+															pgDetail.pg_type
+														),
+												}}
 											>
-												Food Availability
-											</h2>
-											<h2 className="amenitiesAvailability">
-												{amenities.food === "Available"
-													? "Yes"
-													: "No"}
-											</h2>
-										</div>
-
-										<div className="amenitiesPgs">
-											<h2 className="amenitiesTitle">
-												Backup
-											</h2>
-											<h2 className="amenitiesAvailability">
-												{amenities.power_backup ===
-												"Available"
-													? "Yes"
-													: "No"}
-											</h2>
-										</div>
-
-										<div className="amenitiesPgs">
-											<h2 className="amenitiesTitle">
-												Parking
-											</h2>
-											<h2 className="amenitiesAvailability">
-												{amenities.parking ===
-												"Available"
-													? "Yes"
-													: "No"}
-											</h2>
-										</div>
-
-										<div className="amenitiesPgs">
-											<h2
-												className="amenitiesTitle"
-												style={{ width: 84 }}
-											>
-												Cleaning
-											</h2>
-											<h2 className="amenitiesAvailability">
-												{amenities.cleaning}
-											</h2>
+												<p
+													className="pgTypeDetails"
+													style={{
+														color: getColorText(
+															pgDetail.pg_type
+														),
+													}}
+												>
+													{pgDetail.pg_type}
+												</p>
+											</div>
 										</div>
 
 										<div
-											className="amenitiesPgs"
-											style={{ borderRight: "none" }}
+											className="d-flex flex-row align-items-center"
+											style={{
+												gap: 12,
+												marginTop: 20,
+												paddingBottom: 24,
+												borderBottom:
+													"1.5px solid #ebedf0",
+											}}
 										>
-											<h2 className="amenitiesTitle">
-												Washroom
-											</h2>
-											<h2 className="amenitiesAvailability">
-												{amenities.attached_washroom ===
-												"Available"
-													? "Attached"
-													: "Common"}
-											</h2>
+											{rooms.map((room, index) => {
+												return (
+													room.room_type !==
+														"Other" && (
+														<div
+															key={index}
+															className="d-flex flex-row align-items-center"
+														>
+															<hr className="roomsLineBreaker" />
+															<div className="roomDetails">
+																<div className="typeAndPrice">
+																	<p className="roomType">
+																		{
+																			room.room_type
+																		}
+																	</p>
+																	<p className="roomPrice">
+																		₹{" "}
+																		{
+																			room.cost
+																		}
+																	</p>
+																</div>
+															</div>
+														</div>
+													)
+												);
+											})}
 										</div>
-									</div>
 
-									<div
-										className="d-flex flex-row align-items-center"
-										style={{ gap: 32, marginTop: 24 }}
-									>
-										<div className="startingPrice">
-											<p className="startsFrom">
-												Starts from
-											</p>
-											<p className="minCost">
-												{"\u20b9 "}
-												{pgDetail.minCost}
-											</p>
+										<div
+											className="d-flex flex-row align-items-center"
+											style={{
+												borderBottom:
+													"1.5px solid rgb(235, 237, 240)",
+											}}
+										>
+											<div
+												className="amenitiesPgs"
+												style={{ paddingLeft: 0 }}
+											>
+												<h2
+													className="amenitiesTitle"
+													style={{ width: 99 }}
+												>
+													Food Availability
+												</h2>
+												<h2 className="amenitiesAvailability">
+													{amenities.food ===
+													"Available"
+														? "Yes"
+														: "No"}
+												</h2>
+											</div>
+
+											<div className="amenitiesPgs">
+												<h2 className="amenitiesTitle">
+													Backup
+												</h2>
+												<h2 className="amenitiesAvailability">
+													{amenities.power_backup ===
+													"Available"
+														? "Yes"
+														: "No"}
+												</h2>
+											</div>
+
+											<div className="amenitiesPgs">
+												<h2 className="amenitiesTitle">
+													Parking
+												</h2>
+												<h2 className="amenitiesAvailability">
+													{amenities.parking ===
+													"Available"
+														? "Yes"
+														: "No"}
+												</h2>
+											</div>
+
+											<div className="amenitiesPgs">
+												<h2
+													className="amenitiesTitle"
+													style={{ width: 84 }}
+												>
+													Cleaning
+												</h2>
+												<h2 className="amenitiesAvailability">
+													{amenities.cleaning}
+												</h2>
+											</div>
+
+											<div
+												className="amenitiesPgs"
+												style={{ borderRight: "none" }}
+											>
+												<h2 className="amenitiesTitle">
+													Washroom
+												</h2>
+												<h2 className="amenitiesAvailability">
+													{amenities.attached_washroom ===
+													"Available"
+														? "Attached"
+														: "Common"}
+												</h2>
+											</div>
 										</div>
 
-										<div className="contactButtons">
-											<Button className="visitBtn">
-												<div className="visitBtnDiv">
-													<img
-														src={Calendar}
-														className="calendarImg"
-														alt="Calendar"
-													/>
-													<span className="scheduleVisitText">
-														Schedule Visit
-													</span>
-												</div>
-											</Button>
-											<Button className="contactBtn">
-												<div className="contactBtnDiv">
-													<img
-														src={Phone}
-														className="phoneImg"
-														alt="Phone"
-													/>
-													<span className="contactText">
-														Contact
-													</span>
-												</div>
-											</Button>
+										<div
+											className="d-flex flex-row align-items-center"
+											style={{ gap: 32, marginTop: 24 }}
+										>
+											<div className="startingPrice">
+												<p className="startsFrom">
+													Starts from
+												</p>
+												<p className="minCost">
+													{"\u20b9 "}
+													{pgDetail.minCost}
+												</p>
+											</div>
+
+											<div className="contactButtons">
+												<Button className="visitBtn">
+													<div className="visitBtnDiv">
+														<img
+															src={Calendar}
+															className="calendarImg"
+															alt="Calendar"
+														/>
+														<span className="scheduleVisitText">
+															Schedule Visit
+														</span>
+													</div>
+												</Button>
+												<Button className="contactBtn">
+													<div className="contactBtnDiv">
+														<img
+															src={Phone}
+															className="phoneImg"
+															alt="Phone"
+														/>
+														<span className="contactText">
+															Contact
+														</span>
+													</div>
+												</Button>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				);
-			})}
+					);
+				})
+			) : (
+				<div>No Similar PGs available</div>
+			)}
 		</section>
 	);
 }

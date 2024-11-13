@@ -1,3 +1,4 @@
+import "./Styles/App.css";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
@@ -13,7 +14,6 @@ import PgAllInfo from "./PgAllInfo/PgAllInfo";
 import RoomsPhotosUpload from "./PostProperty/RoomsPhotosUpload";
 import FoodMenuDetails from "./PostProperty/FoodMenuDetails";
 import ProfileView from "./ProfileView";
-import "./Styles/App.css";
 import ResetPassword from "./AccountCreation/ResetPassword";
 import FetchAllPgByOwner from "./FetchAllPgByOwner";
 

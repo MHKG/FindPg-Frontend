@@ -1,7 +1,8 @@
 import { Button, Form } from "react-bootstrap";
-import InputRange from "react-input-range";
 import { useEffect } from "react";
 import "../Styles/Filters.css";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 export default function Filters({
 	pgType,
@@ -51,8 +52,8 @@ export default function Filters({
 	const handleBudgetChange = (value) => {
 		setBudget([
 			{
-				min: Math.min(value.min, value.max),
-				max: Math.max(value.min, value.max),
+				min: Math.min(value[0], value[1]),
+				max: Math.max(value[0], value[1]),
 			},
 		]);
 	};
@@ -226,10 +227,12 @@ export default function Filters({
 						Budget
 					</Form.Label>
 					<div className="input-range-wrapper">
-						<InputRange
-							maxValue={40000}
-							minValue={0}
-							value={budget[0]}
+						<Slider
+							range
+							min={0}
+							max={40000}
+							step={1}
+							value={[budget[0].min, budget[0].max]}
 							onChange={handleBudgetChange}
 						/>
 						<div

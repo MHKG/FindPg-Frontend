@@ -80,8 +80,7 @@ export default function Navigators() {
 					}}
 					className="navigators"
 				>
-					{userSearchLocation &&
-					window.location.href.includes("FetchAllPgByOwner")
+					{window.location.href.includes("FetchAllPgByOwner")
 						? "All Pgs"
 						: userSearchLocation}
 				</a>

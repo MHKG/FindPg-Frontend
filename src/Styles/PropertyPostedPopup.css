@@ -1,0 +1,16 @@
+.postedText {
+	width: 194px;
+	height: 64px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	color: #243757;
+}
+
+.tick {
+	width: 100px;
+	height: 100px;
+}

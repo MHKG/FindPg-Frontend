@@ -1,0 +1,110 @@
+#section-2 {
+	padding-bottom: 12px;
+	padding-top: 52px;
+}
+
+.roomAvailability {
+	width: 176px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	color: #243757;
+}
+
+.roomsDetails {
+	padding: 0px;
+	width: 100%;
+	height: 252px;
+	margin-top: 24px;
+}
+
+.imagesAndCost {
+	box-sizing: border-box;
+	width: 308px !important;
+	height: 252px;
+	background: #ffffff;
+	border: 1.5px solid #ebedf0;
+	border-radius: 12px;
+	margin-right: 12px;
+}
+
+.image {
+	width: 100%;
+	height: 172px;
+	border-radius: 12px;
+}
+
+.roomImageArrow {
+	width: 32px;
+	height: 32px;
+	color: #ffffff;
+}
+
+.roomArrowButton {
+	position: relative;
+	width: 44px;
+	height: 44px;
+	opacity: 0.4;
+	background-color: #1d2125;
+	border: none;
+	padding: 6px 8px 6px 4px;
+}
+
+.typeAndCost {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	width: auto;
+	height: 48px;
+	gap: 4px;
+	margin: 16px;
+}
+
+.roomtype {
+	width: 99px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: #7a8699;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.roomcost {
+	width: 60px;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
+	color: #091e42;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.arrowSlick {
+	cursor: pointer;
+	position: absolute;
+	top: -53px;
+	left: 733px;
+	display: block;
+	background: url(../images/SlickArrow.png) no-repeat center;
+	width: 32px;
+	height: 32px;
+	z-index: 1;
+}
+
+.slick-slide {
+	width: auto !important;
+	box-sizing: border-box;
+}

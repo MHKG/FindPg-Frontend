@@ -1,0 +1,41 @@
+.homePage {
+	position: relative;
+	height: 100vh;
+	background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.8) 18.11%,
+			rgba(0, 0, 0, 0) 100%
+		),
+		url(../images/home-page-background.jpeg);
+	background-size: cover;
+	background-position: center;
+}
+
+.findStay {
+	width: 949px;
+	height: 108px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 100px;
+	line-height: 108px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.explore {
+	width: 750px;
+	height: 56px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 28px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.searchBarPosition1 {
+	width: 800px;
+	height: 64px;
+}

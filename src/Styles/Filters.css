@@ -154,3 +154,11 @@
 .input-range-wrapper .input-range__label--max {
 	display: none;
 }
+
+.rc-slider-handle {
+	width: 20px !important;
+	height: 20px !important;
+	margin-top: -8px !important;
+	border: 6px solid rgb(39, 101, 221) !important;
+	opacity: 1 !important;
+}

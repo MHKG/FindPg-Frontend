@@ -9,6 +9,7 @@ import ForgotPassword from "./ForgotPassword.js";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../Firebase";
 import SignInwithGoogle from "./SignInwithGoogle.js";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function LoginPopup({ show, onHide, onBackToRegister }) {
 	const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 	const [forgotPassword, setForgotPassword] = useState(false);
 
 	const inputRef = useRef(null);
+	const recaptcha = useRef(null);
 
 	useEffect(() => {
 		const handleKeyPress = (event) => {
@@ -42,6 +44,10 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 	}, [show]);
 
 	const handleContinue = async (emailProp, passwordProp, googleLogin) => {
+		if (!recaptcha.current.getValue()) {
+			alert("Verify You're Not a Robot!");
+			return;
+		}
 		if (googleLogin) {
 			setEmail(emailProp);
 			setPassword(passwordProp);
@@ -141,6 +147,10 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 	};
 
 	const handleGoogle = async (e) => {
+		if (!recaptcha.current.getValue()) {
+			alert("Verify You're Not a Robot!");
+			return;
+		}
 		try {
 			const provider = new GoogleAuthProvider();
 			const result = await signInWithPopup(auth, provider);
@@ -286,6 +296,14 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 					>
 						Continue
 					</Button>
+
+					<div id="captcha" align="left">
+						<ReCAPTCHA
+							sitekey={process.env.REACT_APP_SITE_KEY}
+							ref={recaptcha}
+						/>
+					</div>
+
 					<SignInwithGoogle onClick={(e) => handleGoogle(e)} />
 				</div>
 			</Modal>

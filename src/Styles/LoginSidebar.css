@@ -1,0 +1,110 @@
+.loginSidebar {
+	width: 336px;
+	height: 100px;
+	margin-left: 16px;
+	margin-top: 36px;
+	background: #f5f6f7;
+	border-radius: 8px;
+	cursor: pointer;
+	padding: 12px;
+}
+
+.loginIcon {
+	width: 76px;
+	height: 76px;
+	background: #f5f6f7;
+	border-radius: 76px;
+}
+
+.login-register {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 145px;
+	height: 52px;
+}
+
+.hi {
+	width: 70px;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.username {
+	width: 220px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.loginButton {
+	cursor: pointer;
+	width: auto;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	border: none;
+	background-color: transparent;
+}
+
+#loginButton:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+.postProperty {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 16px 36px 16px 16px;
+	gap: 8px;
+	width: 336px;
+	height: 56px;
+	border-bottom: 1px solid #ebedf0 !important;
+	background-color: #ffffff;
+	border: none;
+	margin-top: 20px;
+}
+
+.logout {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 16px 36px 16px 16px;
+	gap: 8px;
+	width: 336px;
+	height: 56px;
+	top: 214px;
+	border-bottom: 1px solid #ebedf0 !important;
+	background-color: #ffffff;
+	border: none;
+	margin-top: 8px;
+}

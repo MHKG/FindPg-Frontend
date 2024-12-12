@@ -1,0 +1,424 @@
+.pgList {
+	width: 888px;
+	height: auto;
+	background: #ffffff;
+	box-shadow: 0px 0px 12px 2px rgba(39, 101, 221, 0.05);
+	border-radius: 20px;
+	padding: 28px;
+	padding-bottom: 0px;
+}
+
+.pg {
+	box-sizing: border-box;
+	background: #ffffff;
+	border: 1.5px solid #ebedf0;
+	border-radius: 12px;
+	margin-bottom: 28px;
+}
+
+.pgImages {
+	width: 300px;
+	height: 320px;
+	border-radius: 12px;
+}
+
+.imageContainer {
+	height: 320px;
+}
+
+.imageArrows {
+	width: 44px;
+	height: 44px;
+	background: #1d2125;
+	opacity: 0.4;
+	border: none;
+	padding: 6px 8px 6px 4px;
+}
+
+.imageArrows:hover {
+	background: #1d2125;
+}
+
+.arrow {
+	width: 32px;
+	height: 32px;
+	color: #ffffff;
+}
+
+.nameAndLocation {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 191px;
+	height: 52px;
+}
+
+.namePgDetails {
+	width: 400px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 28px;
+	text-align: left;
+	color: #000000;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.locationPgDetails {
+	width: 450px;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: left;
+	color: #6b788e;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.type {
+	width: 68px;
+	height: 24px;
+	right: 0px;
+	border-radius: 12px 0px 0px 12px;
+	padding: 4px 19px;
+}
+
+.pgTypeDetails {
+	width: 30px;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.roomsLineBreaker {
+	width: 4px;
+	height: 44px;
+	background: rgba(39, 101, 221, 0.3);
+	opacity: 1;
+	border: none;
+	margin: 0px;
+}
+
+.roomDetails {
+	width: 100px;
+	height: 44px;
+	background: #f5f6f7;
+}
+
+.typeAndPrice {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 76px;
+	height: 36px;
+}
+
+.roomType {
+	width: 76px;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin-top: 4px;
+	margin-left: 8px;
+}
+
+.roomPrice {
+	width: 49px;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 16px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	margin-left: 8px;
+}
+
+.lineBreakerPg {
+	width: 484px;
+	height: 0px;
+	border: 1.5px solid #ebedf0;
+	opacity: 1;
+}
+
+.amenitiesPgs {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: auto;
+	height: auto;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	border-right: 1.5px solid #ebedf0;
+	padding-right: 20px;
+	padding-left: 12px;
+}
+
+.amenitiesTitle {
+	width: auto;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+	margin-top: 4px;
+}
+
+.verticalBreaker {
+	width: 44px;
+	height: 0px;
+	border: 1.5px solid #ebedf0;
+	opacity: 1;
+	transform: rotate(90deg);
+}
+
+.amenitiesAvailability {
+	width: auto;
+	height: 16px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 16px;
+	color: #243757;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.startingPrice {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	width: auto;
+	height: 48px;
+}
+
+.startsFrom {
+	width: auto;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 20px;
+	color: #6b788e;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.minCost {
+	width: 87px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 28px;
+	color: #091e42;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.contactButtons {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 12px;
+	width: 376px;
+	height: 48px;
+}
+
+.visitBtn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 212px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.visitBtn:hover {
+	background-color: #2765dd;
+}
+
+.visitBtnDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 8px;
+	width: 135px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.calendarImg {
+	width: 24px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.scheduleVisitText {
+	width: 103px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #ffffff;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.contactBtn {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 152px;
+	height: 48px;
+	border: 1px solid #2765dd;
+	border-radius: 8px;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	background-color: #ffffff;
+}
+
+.contactBtn:hover {
+	background-color: transparent;
+}
+
+.contactBtnDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	gap: 8px;
+	width: 90px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.phoneImg {
+	width: 24px;
+	height: 24px;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.contactText {
+	width: 58px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+	color: #2765dd;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.data {
+	padding: 24px;
+	cursor: pointer;
+	width: 532px;
+	height: 236px;
+}
+
+.toggle-bar {
+	position: relative;
+	bottom: 78px;
+	margin-bottom: 12px;
+	height: 24px;
+	border-radius: 12px;
+	opacity: 0.4;
+	background: #1d2125;
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+	align-items: center;
+	justify-content: center;
+	margin-left: 100px;
+	margin-right: 100px;
+	padding: 8px;
+}
+
+.dot {
+	height: 8px;
+	width: 8px;
+	flex-shrink: 0;
+	background-color: rgba(255, 255, 255, 0.7) !important;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.dot.active {
+	opacity: 1;
+	height: 8px;
+	width: 18px;
+	background-color: #ffffff !important;
+	border-radius: 4px;
+}

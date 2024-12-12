@@ -1,0 +1,41 @@
+.contact {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background: #fafbfb;
+}
+
+.contactDetailsPage {
+	width: 888px;
+	height: auto;
+	background: #ffffff;
+	box-shadow: 0px 0px 12px 2px rgba(39, 101, 221, 0.05);
+	border-radius: 20px;
+	padding: 40px;
+}
+
+.contactDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 413px;
+	height: 64px;
+	margin-top: 40px;
+}
+
+.postPropertyBtn {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 352px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+	margin-top: 40px;
+}

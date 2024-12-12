@@ -1,0 +1,143 @@
+.inputGroup {
+	position: relative;
+	width: 352px;
+	height: 60px;
+	border: 1px solid #dfe2e6;
+	border-radius: 4px;
+}
+
+.inputGroup::after {
+	position: absolute;
+	top: 30px;
+	right: 10px;
+}
+
+.inputGroup:hover {
+	background: #ffffff;
+	color: #000;
+}
+
+.inputGroup:focus {
+	background: #ffffff;
+	color: #000;
+}
+
+.label {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 15px;
+}
+
+.input {
+	box-sizing: border-box;
+	width: 352px;
+	height: 60px;
+	border: 1px solid rgb(223, 226, 230);
+	border-radius: 4px;
+	padding-left: 60px;
+}
+
+.input::placeholder {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 24px;
+	text-align: center;
+	color: #6b788e;
+}
+
+.createAccount {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 352px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+	margin-bottom: 28px;
+}
+
+.editNumberButton {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0px;
+	gap: 4px;
+	width: auto;
+	height: 20px;
+	background-color: #ffffff;
+	border: none;
+}
+
+.editNumberButton:hover {
+	background: #ffffff;
+}
+
+.editNumberButton:focus {
+	background: #ffffff;
+}
+
+.editNumberText {
+	width: auto;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 20px;
+	color: #2765dd;
+	flex: none;
+	order: 0;
+	flex-grow: 0;
+}
+
+.editNumberPencil {
+	width: 16px;
+	height: 16px;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+	color: #2765dd;
+}
+
+.uploadImage {
+	cursor: pointer;
+	width: 60px !important;
+	height: 60px;
+	background: #ebedf0;
+	border-radius: 80px !important;
+	padding: 0px !important;
+}
+
+.uploadImgText {
+	width: 225px !important;
+	height: 24px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #091e42;
+}
+
+.custom-modal-header {
+	padding: 36px 24px;
+	border-bottom: none;
+}
+
+.custom-modal .modal-content {
+	width: 450px;
+	height: auto;
+	background: #ffffff;
+	border-radius: 12px;
+}
+
+.custom-modal-title {
+	font-weight: bold;
+	font-size: 1.5rem;
+}

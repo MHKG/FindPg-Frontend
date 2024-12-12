@@ -1,0 +1,128 @@
+.modal-dialog-centered {
+	display: flex;
+	align-items: center;
+}
+
+.custom-register-modal .modal-content {
+	position: relative;
+	width: 400px;
+	height: auto;
+	background: #ffffff;
+	border-radius: 12px;
+}
+
+.custom-register-modal-header {
+	padding: 36px 24px;
+	border-bottom: none;
+}
+
+.enterNumber {
+	width: 190px;
+	height: 24px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 24px;
+	color: #6b788e;
+}
+
+.countryCode {
+	box-sizing: border-box;
+	width: 68px;
+	height: 56px;
+	border: 1px solid #dfe2e6;
+	border-radius: 4px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-repeat: no-repeat;
+	background-position: right 8px center;
+}
+
+.countryCode::-ms-expand {
+	display: none;
+}
+
+.countryCode option:checked {
+	font-weight: bold;
+}
+
+.flag-icon {
+	width: 20px;
+	height: 16px;
+	gap: 0px;
+	border-radius: 2px 0px 0px 0px;
+	opacity: 0px;
+	border-radius: 2px;
+}
+
+.phoneNumber {
+	box-sizing: border-box;
+	width: 352px;
+	height: 56px;
+	right: 24px;
+	border: 1px solid #dfe2e6;
+	border-radius: 4px;
+}
+
+.continue {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 352px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+}
+
+.continueRegister {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 352px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+	margin-bottom: 28px;
+}
+
+.signIn {
+	display: flex;
+	width: 46px;
+	height: 20px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 13px;
+	line-height: 20px;
+	color: #8993a4;
+	background-color: #ffffff !important;
+	border: none;
+	gap: 0px;
+}
+
+.signIn:hover {
+	color: #8993a4;
+	background-color: #ffffff !important;
+}
+
+.signIn:focus {
+	color: #8993a4;
+	background-color: #ffffff !important;
+}
+
+.eye_icon_register {
+	width: 24px;
+	height: 24px;
+	flex-shrink: 0;
+	position: absolute;
+	margin-left: 320px !important;
+	margin-top: 48px;
+}

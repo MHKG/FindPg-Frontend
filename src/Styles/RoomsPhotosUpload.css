@@ -1,0 +1,90 @@
+.roomPhotosUpload {
+	position: relative;
+	width: auto;
+	height: 100vh;
+	background: #fafbfb;
+	overflow-x: hidden;
+}
+
+.roomsPhotosDetails {
+	width: 888px;
+	height: auto;
+	background: #ffffff;
+	box-shadow: 0px 0px 12px 2px rgba(39, 101, 221, 0.05);
+	border-radius: 20px;
+	padding: 40px;
+}
+
+.roomPhotos {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 4px;
+	width: 454px;
+	height: 64px;
+	margin-top: 20px;
+}
+
+.roomHeading {
+	width: 454px;
+	height: 32px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	color: #091e42;
+	flex: none;
+	order: 0;
+	align-self: stretch;
+	flex-grow: 0;
+}
+
+.roomDetail {
+	width: 454px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 28px;
+	color: #7a8699;
+	flex: none;
+	order: 1;
+	flex-grow: 0;
+}
+
+.typeSharing {
+	width: 413px;
+	height: 32px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 32px;
+	color: #091e42;
+	margin-top: 40px;
+}
+
+.images {
+	cursor: pointer;
+	box-sizing: border-box;
+	width: 220px;
+	height: 124px;
+	border-radius: 4px;
+}
+
+.continueBtnUpload {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 36px;
+	gap: 8px;
+	width: 200px;
+	height: 48px;
+	background: #2765dd;
+	border-radius: 8px;
+}

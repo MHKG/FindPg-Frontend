@@ -1,0 +1,49 @@
+#section-3 {
+	padding-bottom: 12px;
+	padding-top: 52px;
+}
+
+.foodMenu {
+	width: 111px;
+	height: 28px;
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	color: #243757;
+}
+
+.table {
+	padding: 0px;
+	width: 832px;
+	height: 544px;
+	border-radius: 4px;
+	box-sizing: border-box;
+	background: #ffffff;
+	border: 1px solid #dfe2e6;
+	text-align: center;
+	vertical-align: middle;
+	margin-top: 24px;
+}
+
+tr,
+th,
+td {
+	border: 1px solid #dfe2e6;
+	height: 68px;
+	align-items: center;
+}
+
+th[scope="col"] {
+	background-color: #f5f6f7;
+}
+
+th {
+	width: 116px;
+	vertical-align: middle;
+}
+
+td {
+	width: 238.67px;
+}

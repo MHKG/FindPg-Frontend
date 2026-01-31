@@ -266,46 +266,46 @@ function LoginPopup({ show, onHide, onBackToRegister }) {
 							<p
 								className="signIn"
 								style={{
-									width: 147,
-									color: "#000000",
+										width: 147,
+										color: "#000000",
 								}}
-							>
-								Don't have an account?
-							</p>
-							<Button
+						>
+								Don&apos;t have an account?
+						</p>
+						<Button
 								className="signIn"
 								onClick={handleRegister}
 								style={{ padding: 0 }}
-							>
+						>
 								Sign up
-							</Button>
-							<Button
+						</Button>
+						<Button
 								className="signIn"
 								onClick={handleForgotPassword}
 								style={{ padding: 0 }}
-							>
+						>
 								Forgot Password?
-							</Button>
+						</Button>
 						</div>
-					</div>
-					<Button
-						variant="primary"
-						onClick={() => handleContinue("", "", false)}
-						className="continueLogin"
-						id="continueLogin"
-					>
-						Continue
-					</Button>
+                    </div>
+                    <Button
+                        variant="primary"
+                        onClick={() => handleContinue("", "", false)}
+                        className="continueLogin"
+                        id="continueLogin"
+                    >
+                        Continue
+                    </Button>
 
-					<div id="captcha" align="left">
-						<ReCAPTCHA
-							sitekey={process.env.REACT_APP_SITE_KEY}
-							ref={recaptcha}
-						/>
-					</div>
+                    <div id="captcha" style={{ textAlign: "left" }}>
+                        <ReCAPTCHA
+                                sitekey={process.env.REACT_APP_SITE_KEY}
+                                ref={recaptcha}
+                        />
+                    </div>
 
-					<SignInwithGoogle onClick={(e) => handleGoogle(e)} />
-				</div>
+                    <SignInwithGoogle onClick={(e) => handleGoogle(e)} />
+                </div>
 			</Modal>
 
 			<AccountLoggedIn

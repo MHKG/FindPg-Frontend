@@ -1,5 +1,5 @@
 import "../Styles/AvailableAmenities.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Wifi from "../images/ColourWifi.png";
 import Food from "../images/ColourFood.png";
 import PowerBackup from "../images/ColourBackup.png";

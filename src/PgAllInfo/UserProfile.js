@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/UserProfile.css";
-import React, { Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Calendar from "../images/Calendar.png";
 import Phone from "../images/Phone.png";
 import { useNavigate } from "react-router-dom";

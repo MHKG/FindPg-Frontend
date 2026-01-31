@@ -11,9 +11,9 @@
 		"firebase": "^11.0.2",
 		"jwt-decode": "^4.0.0",
 		"rc-slider": "^11.1.7",
-		"react": "^19.0.0",
+		"react": "^18.2.0",
 		"react-bootstrap": "^2.10.6",
-		"react-dom": "^19.0.0",
+		"react-dom": "^18.2.0",
 		"react-google-recaptcha": "^3.1.0",
 		"react-router-dom": "^7.0.2",
 		"react-scripts": "5.0.1",
@@ -29,8 +29,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"debug": "react-scripts --inspect-brk start",
-		"start:backend": "cd C:/Users/mehul/IdeaProjects/FindPg/FindPg-Backend && mvn spring-boot:run",
-		"start:all": "concurrently \"npm start\" \"npm run start:backend\""
+		"lint": "eslint \"src/**/*.{js,jsx}\""
 	},
 	"eslintConfig": {
 		"extends": [
@@ -51,6 +50,9 @@
 		]
 	},
 	"devDependencies": {
-		"concurrently": "^9.1.0"
-	}
+		"concurrently": "^9.1.0",
+		"eslint": "^8.45.0",
+		"eslint-plugin-react": "^7.32.2"
+	},
+	"homepage": "."
 }

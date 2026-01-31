@@ -1,5 +1,5 @@
 import { Button, Form } from "react-bootstrap";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "../Styles/Filters.css";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";

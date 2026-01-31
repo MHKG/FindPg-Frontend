@@ -1,5 +1,5 @@
 import "../Styles/Rules.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import NoticePeriod from "../images/NoticePeriod.png";
 import GateClosing from "../images/GateClosing.png";
 import Smoking from "../images/Smoking.png";

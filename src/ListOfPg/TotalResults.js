@@ -1,6 +1,6 @@
 import { Dropdown } from "react-bootstrap";
 import SortIcon from "../images/SortIcon.png";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "../Styles/TotalResults.css";
 import { axiosInstance } from "../AxiosInstance";
 import { useParams } from "react-router-dom";

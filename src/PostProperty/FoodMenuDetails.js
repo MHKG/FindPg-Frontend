@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "../Styles/FoodMenuDetails.css";
 import Header from "../Header";
@@ -84,9 +84,7 @@ export default function FoodMenuDetails() {
 		}));
 	};
 
-	useEffect(() => {
-		console.log(food);
-	}, [food]);
+	useEffect(() => {}, [food]);
 
 	const getPageHeight = () => {
 		if (isChecked.length < 2) {
@@ -145,77 +143,54 @@ export default function FoodMenuDetails() {
 									className="d-flex flex-row"
 									style={{ gap: 37 }}
 								>
-									{days.map((day, index) => {
-										return (
-											<Form.Check
-												key={index}
-												type="checkbox"
-												style={{ cursor: "pointer" }}
-												label={day}
-												name={day}
-												checked={
-													isChecked.includes(day)
-														? true
-														: false
-												}
-												onChange={() =>
-													handleCheckboxChange(day)
-												}
-											/>
-										);
-									})}
+									{days.map((day, index) => (
+										<Form.Check
+											key={day}
+											type="checkbox"
+											style={{ cursor: "pointer" }}
+											label={day}
+											name={day}
+											checked={isChecked.includes(day)}
+											onChange={() => handleCheckboxChange(day)}
+										/>
+									))}
 								</div>
 							</Form.Group>
 
 							{days.map((day) => {
 								if (isChecked.includes(day)) {
 									return (
-										<div>
-											<h2
-												column
-												sm="4"
-												className="daysQuestion"
-											>
+										<div key={day}>
+											<h2 className="daysQuestion">
 												{day}
 											</h2>
 											<div
 												className="d-flex flex-row"
 												style={{ gap: 29 }}
 											>
-												{foodTimes.map((time, idx) => {
-													return (
-														<Form.Group
-															className="food-form-group"
-															key={time}
-														>
-															<Form.Label
-																column
-																sm="4"
-																className="food-form-label"
-															>
-																{time}
-															</Form.Label>
-															<Form.Control
-																type="text"
-																name={time}
-																value={
-																	food[day][
-																		time
-																	]
-																}
-																className="food-form-control"
-																onChange={(e) =>
-																	foodChange(
-																		day,
-																		time,
-																		e.target
-																			.value
-																	)
-																}
-															/>
-														</Form.Group>
-													);
-												})}
+												{foodTimes.map((time) => (
+													<Form.Group
+														className="food-form-group"
+														key={time}
+													>
+														<Form.Label className="food-form-label">
+															{time}
+														</Form.Label>
+														<Form.Control
+															type="text"
+															name={time}
+															value={food[day][time]}
+															className="food-form-control"
+															onChange={(e) =>
+																foodChange(
+																	day,
+																	time,
+																	e.target.value
+																)
+															}
+														/>
+													</Form.Group>
+												))}
 											</div>
 										</div>
 									);

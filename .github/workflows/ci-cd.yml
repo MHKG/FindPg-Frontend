@@ -54,17 +54,28 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: build
           path: ./build
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     permissions:
+      contents: write
       pages: write
       id-token: write
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: ./build
+
+      - name: Deploy to GitHub Pages via gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build

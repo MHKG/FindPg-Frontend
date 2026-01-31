@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Styles/ProfileView.css";
 import Header from "./Header";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";

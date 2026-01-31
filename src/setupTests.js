@@ -3,3 +3,36 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import "@testing-library/jest-dom";
+
+// Provide a minimal window.matchMedia implementation for jsdom tests
+if (typeof window !== "undefined" && !window.matchMedia) {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    value: (query) => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: () => {}, // deprecated
+      removeListener: () => {}, // deprecated
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    }),
+  });
+}
+
+import React from "react";
+
+// Provide lightweight mocks for react-router-dom so unit tests don't need the actual package
+jest.mock("react-router-dom", () => {
+  const React = require("react");
+  return {
+    BrowserRouter: ({ children }) => React.createElement(React.Fragment, null, children),
+    Routes: ({ children }) => React.createElement(React.Fragment, null, children),
+    Route: ({ element }) => element || null,
+    Link: ({ children }) => React.createElement("a", null, children),
+    useNavigate: () => () => {},
+    useLocation: () => ({ pathname: "/" }),
+    useParams: () => ({}),
+  };
+});

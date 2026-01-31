@@ -1,8 +1,7 @@
 export const validate = (field, value, messageSetter, password) => {
 	switch (field) {
-		case "email":
-			const emailRegex =
-				/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9]))+$/;
+		case "email": {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 			if (!emailRegex.test(value)) {
 				messageSetter("Invalid Email.");
@@ -11,8 +10,9 @@ export const validate = (field, value, messageSetter, password) => {
 				messageSetter("");
 				return true;
 			}
+		}
 
-		case "password":
+		case "password": {
 			const passwordRegex =
 				/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
@@ -25,15 +25,17 @@ export const validate = (field, value, messageSetter, password) => {
 				messageSetter("");
 				return true;
 			}
+		}
 
-		case "verifyPassword":
+		case "verifyPassword": {
 			if (value !== password) {
-				messageSetter("Password doesnt match");
+				messageSetter("Password doesn't match");
 				return false;
 			} else {
 				messageSetter("");
 				return true;
 			}
+		}
 
 		default:
 			return false;

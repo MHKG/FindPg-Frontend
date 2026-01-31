@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
 import { validate } from "../GlobalFunctions";
 import { useSearchParams } from "react-router-dom";

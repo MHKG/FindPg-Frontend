@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Form, Row, Col, Dropdown } from "react-bootstrap";
 import "../Styles/PgDetails.css";
 import Header from "../Header";
@@ -36,9 +36,9 @@ export default function PgDetails() {
 	const [errorMessageSharing, setErrorMessageSharing] = useState("");
 	const [errorMessageDescription, setErrorMessageDescription] = useState("");
 	const [amenities, setAmenities] = useState(() => {
-		return allPgDetails
-			? { ...allPgDetails.updatedAmenities }
-			: {
+			return allPgDetails
+				? { ...allPgDetails.updatedAmenities }
+				: {
 					wifi: "Not Available",
 					food: "Not Available",
 					power_backup: "Not Available",
@@ -47,19 +47,19 @@ export default function PgDetails() {
 					attached_washroom: "Not Available",
 					air_conditioner: "Not Available",
 					washing_machine: "Not Available",
-			  };
-	});
+				};
+		});
 
 	const [pgRules, setPgRules] = useState(() => {
 		return allPgDetails
-			? { ...allPgDetails.updatedRules }
-			: {
-					smoking: "Not Allowed",
-					drinking: "Not Allowed",
-					loud_music: "Not Allowed",
-					party: "Not Allowed",
-					visitor_entry: "Not Allowed",
-			  };
+		? { ...allPgDetails.updatedRules }
+		: {
+				smoking: "Not Allowed",
+				drinking: "Not Allowed",
+				loud_music: "Not Allowed",
+				party: "Not Allowed",
+				visitor_entry: "Not Allowed",
+		};
 	});
 
 	const [selectedCleaning, setSelectedCleaning] = useState(() => {

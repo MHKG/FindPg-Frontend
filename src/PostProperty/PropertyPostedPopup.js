@@ -1,7 +1,7 @@
 import { Modal } from "react-bootstrap";
 import GreenTick from "../images/GreenTick.png";
 import "../Styles/PropertyPostedPopup.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PropertyPostedPopup({ show, onHide }) {

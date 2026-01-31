@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/PgAllInfo.css";
 import UserProfile from "./UserProfile";
 import Header from "../Header";

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "../Styles/Pricing.css";
 import Header from "../Header";
@@ -11,25 +11,25 @@ export default function Pricing() {
 
 	const [prices, setPrices] = useState(() => {
 		return allPrices
-			? { ...allPrices.prices }
-			: {
-					price1Sharing: "",
-					price2Sharing: "",
-					price3Sharing: "",
-					price4Sharing: "",
-					priceOtherSharing: "",
-					deposit: "",
-					maintenance: "",
-					electric_charges: "",
-			  };
+		? { ...allPrices.prices }
+		: {
+				price1Sharing: "",
+				price2Sharing: "",
+				price3Sharing: "",
+				price4Sharing: "",
+				priceOtherSharing: "",
+				deposit: "",
+				maintenance: "",
+				electric_charges: "",
+		};
 	});
 	const [isChecked, setIsChecked] = useState(() => {
 		return allPrices
-			? { ...allPrices.isChecked }
-			: {
-					maintenance: false,
-					electric: false,
-			  };
+		? { ...allPrices.isChecked }
+		: {
+				maintenance: false,
+				electric: false,
+		};
 	});
 	const [roomTypes, setRoomTypes] = useState(() => {
 		return allPrices ? [...allPrices.roomTypes] : [];

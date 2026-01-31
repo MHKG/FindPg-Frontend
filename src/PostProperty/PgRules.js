@@ -1,3 +1,4 @@
+import React from "react";
 import Smoking from "../images/Smoking.png";
 import Drinking from "../images/Drinking.png";
 import LoudMusic from "../images/LoudMusic.png";
@@ -29,7 +30,7 @@ export default function PgRules({ pgRules, setPgRules }) {
 					>
 						<label className="mb-2 checkButtons">
 							<div className="imageNameGroup">
-								<img src={Smoking} alt="Smoking Icon" />
+								<img src={Smoking} alt="Smoking icon" />
 								<span className="name">Smoking</span>
 							</div>
 							<input
@@ -41,7 +42,7 @@ export default function PgRules({ pgRules, setPgRules }) {
 						</label>
 						<label className="mb-2 checkButtons">
 							<div className="imageNameGroup">
-								<img src={Drinking} alt="Drinking Icon" />
+								<img src={Drinking} alt="Drinking icon" />
 								<span className="name">Drinking</span>
 							</div>
 							<input
@@ -58,7 +59,7 @@ export default function PgRules({ pgRules, setPgRules }) {
 					>
 						<label className="mb-2 checkButtons">
 							<div className="imageNameGroup">
-								<img src={LoudMusic} alt="Drinking Icon" />
+								<img src={LoudMusic} alt="Loud music icon" />
 								<span className="name">Loud-Music</span>
 							</div>
 							<input
@@ -70,7 +71,7 @@ export default function PgRules({ pgRules, setPgRules }) {
 						</label>
 						<label className="mb-2 checkButtons">
 							<div className="imageNameGroup">
-								<img src={Party} alt="Party Icon" />
+								<img src={Party} alt="Party icon" />
 								<span className="name">Party</span>
 							</div>
 							<input
@@ -89,7 +90,7 @@ export default function PgRules({ pgRules, setPgRules }) {
 							<div className="imageNameGroup">
 								<img
 									src={VisitorEntry}
-									alt="Visitor Entry Icon"
+									alt="Visitor entry icon"
 								/>
 								<span className="name">Visitor Entry</span>
 							</div>

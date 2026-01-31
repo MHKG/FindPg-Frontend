@@ -12,10 +12,10 @@ export default function PgPhotosUpload() {
 
 	const [images, setImages] = useState(() => {
 		const filledImages = imageUrls
-			? imageUrls.map(
-					(image) => "http://localhost:8080/image_controller/" + image
-			  )
-			: [];
+		? imageUrls.map(
+			(image) => "http://localhost:8080/image_controller/" + image
+		)
+		: [];
 
 		return Array(6)
 			.fill(uploadImageRect)
@@ -114,7 +114,6 @@ export default function PgPhotosUpload() {
 				);
 			}
 		} catch (error) {
-			console.error("Error:", error);
 			setErrorMessage("Failed to upload images. Please try again.");
 			return;
 		}

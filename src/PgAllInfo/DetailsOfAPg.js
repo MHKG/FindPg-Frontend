@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import "../Styles/DetailsOfAPg.css";
 import MapIcon from "../images/MapIcon.png";
 import Arrowhead from "../images/Arrowhead.png";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { axiosInstance } from "../AxiosInstance";
 import DetailsNavigationBar from "./DetailsNavigationBar";
 

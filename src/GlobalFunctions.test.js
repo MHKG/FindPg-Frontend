@@ -1,6 +1,8 @@
 import { validate } from "./GlobalFunctions";
 
 describe("validate() utility", () => {
+  const TEST_PASSWORD = process.env.TEST_PASSWORD || 'test-password';
+
   test("valid and invalid email", () => {
     const msg = jest.fn();
 
@@ -26,10 +28,10 @@ describe("validate() utility", () => {
   test("verifyPassword matches and mismatches", () => {
     const msg = jest.fn();
 
-    expect(validate("verifyPassword", "secret", msg, "secret")).toBe(true);
+    expect(validate("verifyPassword", TEST_PASSWORD, msg, TEST_PASSWORD)).toBe(true);
     expect(msg).toHaveBeenLastCalledWith("");
 
-    expect(validate("verifyPassword", "nope", msg, "secret")).toBe(false);
+    expect(validate("verifyPassword", "nope", msg, TEST_PASSWORD)).toBe(false);
     expect(msg).toHaveBeenLastCalledWith("Password doesn't match");
   });
 });

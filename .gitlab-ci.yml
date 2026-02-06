@@ -1,0 +1,55 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  NODE_VERSION: "18"
+  NPM_CACHE_DIR: "$CI_PROJECT_DIR/.npm"
+
+cache:
+  paths:
+    - .npm/
+    - node_modules/
+
+build:
+  stage: build
+  image: node:18
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script:
+    - echo "Running lint..."
+    - npm run lint
+    - npm test -- --watchAll=false --ci
+    - echo "Package version: $(node -p 'require(\"./package.json\").version')"
+    - npm run build
+  artifacts:
+    paths:
+      - build/
+    expire_in: 1 hour
+  only:
+    - main
+    - master
+
+deploy:
+  stage: deploy
+  image: node:18
+  dependencies:
+    - build
+  before_script:
+    - apt-get update -qq && apt-get install -y -qq git
+  script:
+    - git config user.email "ci@example.com"
+    - git config user.name "GitLab CI"
+    - git remote add gitlab https://oauth2:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git || git remote set-url gitlab https://oauth2:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git
+    - git checkout -b gh-pages || git checkout gh-pages
+    - rm -rf * && rm -rf .[^.]*
+    - cp -r ../build/* .
+    - git add .
+    - git commit -m "Deploy from GitLab CI [skip ci]" || true
+    - git push -u gitlab gh-pages --force
+  only:
+    - main
+    - master
+  environment:
+    name: production
+    url: https://$CI_PROJECT_NAMESPACE.gitlab.io/$CI_PROJECT_NAME
